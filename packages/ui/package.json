@@ -7,15 +7,14 @@
   "scripts": {
     "lint": "eslint \"**/*.ts\"",
     "generate:component": "turbo gen react-component"
-
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
-    "eslint": "^8.57.0",
+    "@types/classnames": "^2.2.11",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@types/classnames": "^2.2.11",
+    "eslint": "^8.57.0",
+    "eslint-config-custom": "*",
+    "tsconfig": "*",
     "typescript": "^5.3.3"
   },
   "dependencies": {
@@ -23,6 +22,8 @@
     "classnames": "^2.2.6",
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-portal": "^4.2.2",
+    "react-transition-group": "^4.4.5"
   }
 }

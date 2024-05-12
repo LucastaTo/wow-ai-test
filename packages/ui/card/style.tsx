@@ -15,8 +15,9 @@ import styled, {
     border as borderStyles,
     BorderProps,
 } from "@todo/shared/styled";
-import React from "react";
 import tinycolor2 from "tinycolor2";
+import { Anchor } from "../anchor";
+import React from "react";
 
 const colorCSS = css`
     color: #ffffff;
@@ -47,7 +48,7 @@ export const StyledCard = styled(
         minWidth,
         maxWidth,
         ...props
-    }) => <div {...props} />
+    }: any) => <div {...props} />
 )`
     position: relative;
     display: flex;
@@ -58,43 +59,43 @@ export const StyledCard = styled(
     background-clip: border-box;
     border: 1px solid ${themeGet("colors.border")};
     border-radius: ${themeGet("radii.rounded")};
-    ${(props) =>
+    ${(props: any) =>
         props.$color === "primary" &&
         css`
             background-color: ${themeGet("colors.primary")};
             ${colorCSS};
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.$color === "secondary" &&
         css`
             background-color: ${themeGet("colors.secondary")};
             ${colorCSS};
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.$color === "success" &&
         css`
             background-color: ${themeGet("colors.success")};
             ${colorCSS};
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.$color === "warning" &&
         css`
             background-color: ${themeGet("colors.warning")};
             ${colorCSS};
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.$color === "danger" &&
         css`
             background-color: ${themeGet("colors.danger")};
             ${colorCSS};
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.$color === "info" &&
         css`
             background-color: ${themeGet("colors.info")};
             ${colorCSS};
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.theme.name === "light" &&
         css`
             box-shadow: 0 0 10px
@@ -103,7 +104,7 @@ export const StyledCard = styled(
                     .toRgbString()};
         `}
 
-    ${(props) =>
+    ${(props: any) =>
         props.theme.name === "cool" &&
         css`
             border-color: transparent;
@@ -112,7 +113,7 @@ export const StyledCard = styled(
                     .setAlpha(0.1)
                     .toRgbString()};
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.theme.name === "dark" &&
         css`
             border-width: 0;
@@ -124,7 +125,7 @@ export const StyledCard = styled(
 `;
 
 export const StyledCardImage = styled(
-    ({ ml, mr, mt, mb, pl, pr, pt, pb, ...props }) => (
+    ({ ml, mr, mt, mb, pl, pr, pt, pb, ...props }: any) => (
         <img {...props} alt="card " />
     )
 )`
@@ -132,7 +133,7 @@ export const StyledCardImage = styled(
     width: 100%;
     border-radius: ${themeGet("radii.rounded")};
     display: block;
-    ${(props) =>
+    ${(props: any) =>
         props.$isTop === true &&
         css`
             border-top-left-radius: ${themeGet("radii.rounded")};
@@ -140,7 +141,7 @@ export const StyledCardImage = styled(
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.$isBottom === true &&
         css`
             border-bottom-left-radius: ${themeGet("radii.rounded")};
@@ -169,7 +170,7 @@ export const StyledCardBody = styled(
         px,
         position,
         ...props
-    }) => <div {...props} />
+    }: any) => <div {...props} />
 )<IBodyProps>`
     flex: 1 1 auto;
     min-height: 1px;
@@ -202,7 +203,7 @@ export const StyledCardHeading = styled(
         color,
         bg,
         ...props
-    }) => <h2 {...props} />
+    }: any) => <h2 {...props} />
 )`
     margin-bottom: 0.75rem;
     ${space};
@@ -229,7 +230,7 @@ export const StyledCardText = styled(
         color,
         bg,
         ...props
-    }) => <p {...props} />
+    }: any) => <p {...props} />
 )`
     ${space};
     ${typography};
@@ -255,11 +256,41 @@ export const StyledCardSubtitle = styled(
         color,
         bg,
         ...props
-    }) => <h6 {...props} />
+    }: any) => <h6 {...props} />
 )`
     margin-top: -0.375rem;
     margin-bottom: 0.5rem;
     color: ${themeGet("colors.gray600")};
+    ${space};
+    ${typography};
+    ${colorStyles};
+`;
+
+export const StyledCardLink = styled(
+    ({
+        ml,
+        mr,
+        mt,
+        mb,
+        pl,
+        pr,
+        pt,
+        pb,
+        fontSize,
+        fontFamily,
+        fontWeight,
+        textAlign,
+        lineHeight,
+        letterSpacing,
+        color,
+        bg,
+        ...props
+    }: any) => <Anchor {...props} />
+)`
+    color: ${themeGet("colors.primary")};
+    &:not(:first-of-type) {
+        margin-left: 1.25rem;
+    }
     ${space};
     ${typography};
     ${colorStyles};
@@ -291,7 +322,7 @@ export const StyledCardHeader = styled(
         color,
         bg,
         ...props
-    }) => <header {...props} />
+    }: any) => <header {...props} />
 )<ICardHeaderProps>`
     margin-bottom: 0;
     border-bottom: 1px solid ${themeGet("colors.border")};
@@ -304,14 +335,14 @@ export const StyledCardHeader = styled(
     &:first-of-type {
         border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
     }
-    ${({ $variant }) =>
+    ${({ $variant }: any) =>
         $variant === "flexbcenter" &&
         css`
             display: flex;
             align-items: center;
             justify-content: space-between;
         `}
-    ${(props) =>
+    ${(props: any) =>
         props.theme.name === "cool" &&
         css`
             border-color: ${tinycolor2(themeGet("colors.skinUi01")(props))
@@ -344,7 +375,7 @@ export const StyledCardFooter = styled(
         pt,
         pb,
         ...props
-    }) => <footer {...props} />
+    }: any) => <footer {...props} />
 )<IFooterProps>`
     border-top: 1px solid ${themeGet("colors.border")};
     background-color: transparent;
@@ -352,7 +383,7 @@ export const StyledCardFooter = styled(
     &:last-of-type {
         border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
     }
-    ${(props) =>
+    ${(props: any) =>
         props.theme.name === "cool" &&
         css`
             border-color: ${tinycolor2(themeGet("colors.skinUi01")(props))
@@ -364,7 +395,7 @@ export const StyledCardFooter = styled(
 `;
 
 export const StyledCardImgOverlay = styled(
-    ({ m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb, ...props }) => (
+    ({ m, mx, my, ml, mr, mt, mb, p, px, py, pl, pr, pt, pb, ...props }: any) => (
         <div {...props} />
     )
 )`
@@ -394,7 +425,7 @@ export const StyledCardGroup = styled(
         minHeight,
         maxHeight,
         ...props
-    }) => <div {...props} />
+    }: any) => <div {...props} />
 )`
     ${device.small} {
         display: flex;
@@ -443,7 +474,7 @@ export const StyledCardDeck = styled(
         minHeight,
         maxHeight,
         ...props
-    }) => <div {...props} />
+    }: any) => <div {...props} />
 )`
     ${device.small} {
         display: flex;
@@ -478,7 +509,7 @@ export const StyledCardColumns = styled(
         minHeight,
         maxHeight,
         ...props
-    }) => <div {...props} />
+    }: any) => <div {...props} />
 )`
     ${device.small} {
         column-count: 3;

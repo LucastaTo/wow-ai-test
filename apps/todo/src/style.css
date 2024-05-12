@@ -95,3 +95,48 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.Toastify .Toastify__toast-container {
+  width: auto;
+  top: 10em;
+}
+
+.Toastify .Toastify__toast-container .alert-success {
+  padding: 8px 16px;
+  min-height: auto;
+  display: flex;
+  gap: 23px;
+  border-radius: 0;
+  background-color: #10b759;
+  border: 1px solid #10b759;
+  color: #10b759;
+}
+
+.Toastify .Toastify__toast-container .alert-success .Toastify__toast-body {
+  margin: 0;
+  padding: 0;
+  min-height: none;
+}
+
+.Toastify
+  .Toastify__toast-container
+  .alert-success
+  .Toastify__toast-body
+  .Toastify__toast-icon {
+  display: none;
+}
+
+.Toastify .Toastify__toast-container .alert-success button {
+  color: #3b4863;
+}
+
+.Toastify .Toastify__toast-container .Toastify__toast--error {
+  padding: 8px 16px;
+  min-height: auto;
+  display: flex;
+  gap: 23px;
+  border-radius: 0;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+}

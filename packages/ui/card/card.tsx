@@ -15,6 +15,7 @@ import {
     StyledCardHeading,
     StyledCardText,
     StyledCardSubtitle,
+    StyledCardLink,
     StyledCardHeader,
     StyledCardFooter,
     StyledCardImgOverlay,
@@ -24,19 +25,16 @@ import {
 } from "./style";
 import React from "react";
 
-interface IChilrenProps {
+interface ICardCommonProps {
+    className?: string;
     children?: React.ReactNode
 }
 
-interface ICardCommonProps extends IChilrenProps {
-    className?: string;
-} 
- 
 /**
  * Card Component
  */
 
-interface ICardProps extends LayoutProps, SpaceProps,IChilrenProps {
+interface ICardProps extends LayoutProps, SpaceProps, ICardCommonProps {
     className?: string;
     color?: "primary" | "secondary" | "success" | "warning" | "danger" | "info";
 }
@@ -126,7 +124,7 @@ export const CardBody: FC<ICardBodyProps> = ({
  * Card Title Component
  */
 
-interface ICardTitleProps extends IChilrenProps {
+interface ICardTitleProps extends ICardCommonProps {
     className?: string;
     as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
@@ -183,6 +181,32 @@ export const CardSubtitle: FC<ICardCommonProps> = ({
         >
             {children}
         </StyledCardSubtitle>
+    );
+};
+
+/**
+ * Card Link Component
+ */
+
+interface ICardLinkProps extends  ICardCommonProps {
+    className?: string;
+    path: string;
+}
+
+export const CardLink: FC<ICardLinkProps> = ({
+    children,
+    className,
+    path,
+    ...restProps
+}) => {
+    return (
+        <StyledCardLink
+            path={path}
+            className={classnames(className, "card-link")}
+            {...restProps}
+        >
+            {children}
+        </StyledCardLink>
     );
 };
 

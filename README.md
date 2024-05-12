@@ -1,31 +1,39 @@
-# `Turborepo` Vite starter
+# Todo List Function
 
-This is an official starter Turborepo.
+## Project Overview
 
-## Using this example
+This project aims to develop a Todo List application with a focus on user-friendly task management. The key features include:
 
-Run the following command:
+- Clean and intuitive user interface.
+- Ability to add, edit, mark as complete or pending, and delete tasks.
+- Form validation to ensure accurate input.
+- Task filtering based on completion status (completed, pending, or all).
+- Local persistence to prevent data loss upon page refresh.
 
-```sh
-npx create-turbo@latest -e with-vite
-```
+---
 
-## What's inside?
+## Task Details
 
-This Turborepo includes the following packages and apps:
+### Implementation Checklist
 
-### Apps and Packages
+- [x] **Requirement 1**
+- [x] **Requirement 2**
+- [ ] **Requirement 3**
 
-- `@todo/ui`: a stub component & utility library shared by both `web` and `docs` applications
-- `@todo/eslint-config-custom`: shared `eslint` configurations
-- `@todo/tsconfig`: `tsconfig.json`s used throughout the monorepo
+---
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Setup
 
-### Utilities
+- Clone the repository and run `npm install` to install the dependencies.
+- Run `npm run dev` to start the client development server.
 
-This Turborepo has some additional tools already setup for you:
+### API
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Set up the environment file (env) based on the configuration file.
+
+### React App
+
+- This project is built using a basic React app structure.
+- Core logic is located in the apps/todo folder.
+- Utilize Pusher as the message broker for real-time communication.
+- API logic is hosted in the apps/api folder.
