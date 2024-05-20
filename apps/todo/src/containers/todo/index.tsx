@@ -223,7 +223,7 @@ const TodoContainer: FC = () => {
               onClick={() => {
                 handleOpenModal();
                 setTodoSelected(todo);
-                if (todo?.isBlockedBy === null) sendBlockMessage(todo.id || 0);
+                if (!todo?.isBlockedBy) sendBlockMessage(todo.id || 0);
               }}
               onDelete={(e: ChangeEvent) => handleDelete(e, todo.id || 0)}
               onComplete={(e: ChangeEvent) => handleComplete(e, todo.id || 0)}

@@ -15,7 +15,7 @@ import { alertSuccess } from "src/utils/toast";
 import classNames from "classnames";
 
 interface IProps {
-  onClose: (isChange: boolean) => void;
+  onClose: (isChange: boolean, userId: string) => void;
   show: boolean;
   todo: ITodoProp | null;
   userId: string | null;
@@ -122,7 +122,7 @@ const TodoModal: FC<IProps> = memo(({ show, onClose, todo, userId }) => {
     setNewTodo(defaultTodo);
     setDescError({ message: "" });
     setNameError({ message: "" });
-    onClose(isChange);
+    onClose(isChange, userId || "");
   };
 
   const handleChange = (
